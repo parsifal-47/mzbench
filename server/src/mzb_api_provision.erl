@@ -14,6 +14,7 @@
 provision_nodes(Config, Logger) ->
     #{
         provision_nodes := ProvisionNodes,
+        provision_workers := ProvisionWorkers,
         director_host := DirectorHost,
         worker_hosts := WorkerHosts,
         user_name := UserName,
@@ -38,7 +39,12 @@ provision_nodes(Config, Logger) ->
 
     case ProvisionNodes of
         true ->
-            ok = install_node(UniqHosts, Config, Logger),
+            ok = install_node(UniqHosts, Config, Logger);
+        _ -> 
+            ok
+    end,
+    case ProvisionWorkers of
+        true ->
             install_workers(UniqHosts, Config, Logger, Env);
         _ -> 
             ok

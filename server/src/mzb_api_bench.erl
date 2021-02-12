@@ -111,6 +111,7 @@ init([Id, Params]) ->
         env => mzbl_script:normalize_env(generate_bench_env(Id, Params)),
         deallocate_after_bench => maps:get(deallocate_after_bench, Params),
         provision_nodes => ProvisionNodes,
+        provision_workers => maps:get(provision_workers, Params),
         req_host => maps:get(req_host, Params),
         initial_user => maps:get(user, Params),
         director_host => undefined,

@@ -1,3 +1,7 @@
+14 Sep 2018 Version 0.5.6
+ * Updated Docker buildings
+ * Fix k8s plugin worker installation
+
 22 May 2018 Version 0.5.5
  * Support for custom images with workers
 
